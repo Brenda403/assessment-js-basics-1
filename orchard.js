@@ -27,15 +27,13 @@
     in cents. 
 */
 
-const fujiAcres = [2, 3, 3, 2, 2, 2, 1]
-const galaAcres = [5, 2, 4, 3, 6, 2, 4]
-const pinkAcres = [1, 5, 4, 2, 1, 5, 4]
+const fujiAcres = [2, 3, 3, 2, 2, 2, 1];
+const galaAcres = [5, 2, 4, 3, 6, 2, 4];
+const pinkAcres = [1, 5, 4, 2, 1, 5, 4];
 
-const fujiPrice = .89 
-const galaPrice = .64
-const pinkPrice = .55
-
-
+const fujiPrice = 0.89;
+const galaPrice = 0.64;
+const pinkPrice = 0.55;
 
 // PROBLEM 1
 
@@ -51,9 +49,20 @@ const pinkPrice = .55
 
 // CODE HERE
 
+// set the total variable to start outside all the loops
+let totalAcres = 0;
+// I wrote the code below to loop through the first array and add the next index to the previous one until total is arrived and did this for each apple type and reassigned the totalAcres value in each loop
+for (let i = 0; i < fujiAcres.length; i++) {
+  totalAcres += fujiAcres[i];
+}
+for (let j = 0; j < galaAcres.length; j++) {
+  totalAcres += galaAcres[j];
+}
+for (let h = 0; h < pinkAcres.length; h++) {
+  totalAcres += pinkAcres[h];
+}
 
-
-
+//console.log(totalAcres);
 
 // PROBLEM 2
 
@@ -68,10 +77,9 @@ const pinkPrice = .55
 */
 
 // CODE HERE
-
-
-
-
+// I set the average variable to equal the totalAcres variable divided by days of the week for the average daily total
+let averageDailyAcres = totalAcres / 7;
+//console.log(averageDailyAcres);
 
 // PROBLEM 3
 
@@ -102,12 +110,18 @@ const pinkPrice = .55
 
 */
 
-let acresLeft = 174 
-let days = 0
+let acresLeft = 174;
+let days = 0;
 
 // CODE HERE
+while (acresLeft > 0) {
+  // here I wrote the code so that each time it loops acres left is reassigned to equal acres left minus the daily average
+  acresLeft = acresLeft - averageDailyAcres;
+  // here I added +1 to count the days each time the loop iterates
+  days = days + 1;
+}
 
-
+//console.log(days);
 
 // PROBLEM 4
 
@@ -134,15 +148,28 @@ let days = 0
 */
 
 // CODE HERE
+// const fujiAcres = [2, 3, 3, 2, 2, 2, 1]; 13, 19.5, 19.5, 13, 13, 13, 6.5
+// const galaAcres = [5, 2, 4, 3, 6, 2, 4];
+// const pinkAcres = [1, 5, 4, 2, 1, 5, 4];
 
-// let fujiTons =
-// let galaTons =
-// let pinkTons =
+let fujiTons = [];
+let galaTons = [];
+let pinkTons = [];
+// For this one I looped over each apple type array and multiplied each element in the array by the tons and pushed each one to the above empty arrays
+for (let i = 0; i < fujiAcres.length; i++) {
+  let dailyAmount = fujiAcres[i] * 6.5;
+  fujiTons.push(dailyAmount);
+}
+for (let i = 0; i < galaAcres.length; i++) {
+  let dailyAmount = galaAcres[i] * 6.5;
+  galaTons.push(dailyAmount);
+}
+for (let i = 0; i < pinkAcres.length; i++) {
+  let dailyAmount = pinkAcres[i] * 6.5;
+  pinkTons.push(dailyAmount);
+}
 
-
-
-
-
+//console.log(fujiTons, galaTons, pinkTons);
 
 // PROBLEM 5
 
@@ -160,16 +187,29 @@ let days = 0
     Hint: there are 2000 pounds in a ton.
 */
 
-// CODE HERE 
+// CODE HERE
+// for the first part with the for loops I iterated to add each value to the one before in the array for each apple variety
+let fujiTotalTons = 0;
+for (let i = 0; i < fujiTons.length; i++) {
+  fujiTotalTons += fujiTons[i];
+}
 
-// let fujiPounds =
-// let galaPounds =
-// let pinkPounds =
+let galaTotalTons = 0;
+for (let i = 0; i < galaTons.length; i++) {
+  galaTotalTons += galaTons[i];
+}
 
+let pinkTotalTons = 0;
+for (let i = 0; i < pinkTons.length; i++) {
+  pinkTotalTons += pinkTons[i];
+}
+// secondly, I assigned the value for each apple variety's pound to the previous variable of total tons times 2000
+let fujiPounds = fujiTotalTons * 2000;
+let galaPounds = galaTotalTons * 2000;
+let pinkPounds = pinkTotalTons * 2000;
 
-
-
-
+// console.log(fujiTotalTons, galaTotalTons, pinkTotalTons);
+// console.log(fujiPounds, galaPounds, pinkPounds);
 
 // PROBLEM 6
 
@@ -187,16 +227,17 @@ let days = 0
     console. 
 */
 
+// const fujiPrice = 0.89;
+// const galaPrice = 0.64;
+// const pinkPrice = 0.55;
+
 // CODE HERE
+// to get the total profit I multiplied the total pounds by the price per pound
+let fujiProfit = fujiPrice * fujiPounds;
+let galaProfit = galaPrice * galaPounds;
+let pinkProfit = pinkPrice * pinkPounds;
 
-// let fujiProfit =
-// let galaProfit =
-// let pinkProfit =
-
-
-
-
-
+console.log(fujiProfit, galaProfit, pinkProfit);
 
 // PROBLEM 7
 
@@ -209,3 +250,7 @@ let days = 0
 */
 
 // CODE HERE
+
+let totalProfit = fujiProfit + galaProfit + pinkProfit;
+
+console.log(totalProfit);

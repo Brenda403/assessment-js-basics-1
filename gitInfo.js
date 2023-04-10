@@ -11,6 +11,9 @@
 
 //CODE HERE
 
+let gitDefinition =
+  "Git is a program used for version control for tracking changes to coding projects";
+
 //////////////////PROBLEM 2////////////////////
 /*
     Create a variable called 'gitHubDefinition'.  
@@ -18,6 +21,9 @@
 */
 
 //CODE HERE
+
+let gitHubDefinition =
+  "GitHub is a hosting website where developers can store and manage coding projects and track changes to their projects";
 
 //////////////////PROBLEM 3////////////////////
 /*
@@ -27,6 +33,9 @@
 
 //CODE HERE
 
+let gitInitDefinition =
+  "git init initializes a repository in the folder where the command was made.";
+
 //////////////////PROBLEM 4////////////////////
 /*
     Create a variable called 'gitCloneDefinition'.  
@@ -35,6 +44,9 @@
 
 //CODE HERE
 
+let gitCloneDefinition =
+  "the git clone command is used to make a copy of the repository it is used on.";
+
 //////////////////PROBLEM 5////////////////////
 /*
     Create a variable called 'gitStatusDefinition'.  
@@ -42,6 +54,9 @@
 */
 
 //CODE HERE
+
+let gitStatusDefinition =
+  "the git status commands lets the user know about the repo they are in such as what has been staged or not and which files are being tracked.";
 
 //////////////////PROBLEM 6////////////////////
 /*
@@ -54,6 +69,10 @@
 
 //CODE HERE
 
+let gitAddDefinition =
+  "the git add command adds changes made in the working directory to the staging area";
+let gitAddCode = "git add --all";
+
 //////////////////PROBLEM 7////////////////////
 /*
     Create a variable called 'gitCommitDefinition'.  
@@ -65,6 +84,10 @@
 
 //CODE HERE
 
+let gitCommitDefinition =
+  "the git commit command stores the changes made to the repository like a snapshot of your project";
+
+let gitCommitCode = `git commit -m "initial Commit"`;
 
 //////////////////PROBLEM 8////////////////////
 /*
@@ -73,3 +96,6 @@
 */
 
 //CODE HERE
+
+let gitPushDefinition =
+  "the git push command uploads or sends commits from your local repository to a remote repository";
